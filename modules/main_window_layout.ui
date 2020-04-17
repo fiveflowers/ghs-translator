@@ -17,7 +17,7 @@
    </font>
   </property>
   <property name="windowTitle">
-   <string>根号三 翻译器 - 论文助手 （Paper Assistant）</string>
+   <string>根号三 翻译器 - 论文助手 （GHS Translator）</string>
   </property>
   <property name="iconSize">
    <size>
@@ -32,7 +32,7 @@
      <x>0</x>
      <y>0</y>
      <width>1230</width>
-     <height>29</height>
+     <height>26</height>
     </rect>
    </property>
    <property name="nativeMenuBar">
@@ -55,7 +55,7 @@
      <string>界面(&amp;V)</string>
     </property>
     <addaction name="action_window_maximize"/>
-    <addaction name="action_window_minimize"/>
+    <addaction name="action_window_reset"/>
     <addaction name="separator"/>
     <addaction name="action_sidebar_show"/>
     <addaction name="action_sidebar_hide"/>
@@ -64,7 +64,7 @@
     <property name="title">
      <string>工具(&amp;T)</string>
     </property>
-    <addaction name="action_paperwriting_helper"/>
+    <addaction name="action_paper_assistant"/>
     <addaction name="action_document_translate"/>
    </widget>
    <widget class="QMenu" name="menu_about">
@@ -102,67 +102,111 @@
    <addaction name="action_close_file"/>
    <addaction name="action_clear_history"/>
    <addaction name="separator"/>
-   <addaction name="action_window_maximize"/>
-   <addaction name="action_window_minimize"/>
    <addaction name="action_sidebar_show"/>
    <addaction name="action_sidebar_hide"/>
+   <addaction name="action_window_maximize"/>
+   <addaction name="action_window_reset"/>
    <addaction name="separator"/>
-   <addaction name="action_paperwriting_helper"/>
+   <addaction name="action_paper_assistant"/>
    <addaction name="action_document_translate"/>
    <addaction name="separator"/>
    <addaction name="action_feedback"/>
   </widget>
   <action name="action_open_file">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/file_open.png</normaloff>../resource/images/file_open.png</iconset>
+   </property>
    <property name="text">
     <string>打开文件</string>
    </property>
   </action>
   <action name="action_open_folder">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/open_folder.png</normaloff>../resource/images/open_folder.png</iconset>
+   </property>
    <property name="text">
     <string>打开文件夹</string>
    </property>
   </action>
   <action name="action_close_file">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/file_close.png</normaloff>../resource/images/file_close.png</iconset>
+   </property>
    <property name="text">
     <string>关闭文件</string>
    </property>
   </action>
   <action name="action_clear_history">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/clear_history.ico</normaloff>../resource/images/clear_history.ico</iconset>
+   </property>
    <property name="text">
     <string>清除历史</string>
    </property>
   </action>
   <action name="action_app_exit">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/app_exit.png</normaloff>../resource/images/app_exit.png</iconset>
+   </property>
    <property name="text">
     <string>退出程序</string>
    </property>
   </action>
   <action name="action_window_maximize">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/window_maximize.png</normaloff>../resource/images/window_maximize.png</iconset>
+   </property>
    <property name="text">
-    <string>最大化</string>
+    <string>窗口最大化</string>
    </property>
   </action>
-  <action name="action_window_minimize">
+  <action name="action_window_reset">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/window_reset.png</normaloff>../resource/images/window_reset.png</iconset>
+   </property>
    <property name="text">
-    <string>最小化</string>
+    <string>窗口正常化</string>
    </property>
   </action>
   <action name="action_sidebar_show">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/sidebar_show.png</normaloff>../resource/images/sidebar_show.png</iconset>
+   </property>
    <property name="text">
     <string>显示侧边栏</string>
    </property>
   </action>
   <action name="action_sidebar_hide">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/sidebar_hide.png</normaloff>../resource/images/sidebar_hide.png</iconset>
+   </property>
    <property name="text">
     <string>隐藏侧边栏</string>
    </property>
   </action>
-  <action name="action_paperwriting_helper">
+  <action name="action_paper_assistant">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/paper-assistant.ico</normaloff>../resource/images/paper-assistant.ico</iconset>
+   </property>
    <property name="text">
     <string>写作助手</string>
    </property>
   </action>
   <action name="action_document_translate">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/file_translate.ico</normaloff>../resource/images/file_translate.ico</iconset>
+   </property>
    <property name="text">
     <string>文档翻译</string>
    </property>
@@ -177,6 +221,10 @@
    </property>
   </action>
   <action name="action_feedback">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/feedback.ico</normaloff>../resource/images/feedback.ico</iconset>
+   </property>
    <property name="text">
     <string>意见反馈</string>
    </property>
@@ -217,7 +265,7 @@
    </hints>
   </connection>
   <connection>
-   <sender>action_window_minimize</sender>
+   <sender>action_window_reset</sender>
    <signal>triggered()</signal>
    <receiver>MainWindow</receiver>
    <slot>showNormal()</slot>
