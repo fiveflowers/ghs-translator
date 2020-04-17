@@ -12,6 +12,7 @@
   </property>
   <property name="font">
    <font>
+    <family>DejaVu Sans</family>
     <pointsize>12</pointsize>
    </font>
   </property>
@@ -34,12 +35,10 @@
      <height>29</height>
     </rect>
    </property>
+   <property name="nativeMenuBar">
+    <bool>true</bool>
+   </property>
    <widget class="QMenu" name="menu_file">
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
     <property name="title">
      <string>文件(&amp;F)</string>
     </property>
@@ -52,11 +51,6 @@
     <addaction name="action_app_exit"/>
    </widget>
    <widget class="QMenu" name="menu_view">
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
     <property name="title">
      <string>界面(&amp;V)</string>
     </property>
@@ -67,11 +61,6 @@
     <addaction name="action_sidebar_hide"/>
    </widget>
    <widget class="QMenu" name="menu_tools">
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
     <property name="title">
      <string>工具(&amp;T)</string>
     </property>
@@ -79,11 +68,6 @@
     <addaction name="action_document_translate"/>
    </widget>
    <widget class="QMenu" name="menu_about">
-    <property name="font">
-     <font>
-      <pointsize>11</pointsize>
-     </font>
-    </property>
     <property name="title">
      <string>关于(&amp;A)</string>
     </property>
@@ -99,6 +83,12 @@
   <widget class="QToolBar" name="toolBar">
    <property name="windowTitle">
     <string>toolBar</string>
+   </property>
+   <property name="iconSize">
+    <size>
+     <width>36</width>
+     <height>36</height>
+    </size>
    </property>
    <attribute name="toolBarArea">
     <enum>TopToolBarArea</enum>
@@ -178,6 +168,10 @@
    </property>
   </action>
   <action name="action_app_about">
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/app_about.ico</normaloff>../resource/images/app_about.ico</iconset>
+   </property>
    <property name="text">
     <string>软件信息</string>
    </property>
