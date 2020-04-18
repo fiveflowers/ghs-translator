@@ -1,13 +1,16 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-# @Time    : 2020/4/17 下午9:27
+# @Time    : 2020/4/17
 # @Author  : Yifeng Huang
 # @Github  : https://github.com/yifer97/ghs-translator.git
-# @File    : ghs-translator.py
+# @FileName: ghs-translator.py
+# @Function: 主程序入口
 
 
 import sys
+
 from PyQt5.QtWidgets import QApplication
+
 from modules.main_window import MainWindow
 
 if __name__ == "__main__":
