@@ -20,6 +20,6 @@ class CrossPlatform(object):
         """
         system_str = platform.system()
         if system_str == 'Windows':
-            return str(path).replace(r'\\', r'/')
+            return path.replace('\\', '/')
         else:  # Linux 或者 Mac Os
             return path
