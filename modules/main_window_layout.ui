@@ -167,6 +167,9 @@
            <pointsize>12</pointsize>
           </font>
          </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
          <property name="toolTip">
           <string>可自由修改文本，修改后将自动翻译</string>
          </property>
@@ -190,6 +193,9 @@
           <font>
            <pointsize>12</pointsize>
           </font>
+         </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
          </property>
          <property name="toolTip">
           <string>基于谷歌翻译</string>
