@@ -69,17 +69,10 @@ class PdfViewer(QWebEngineView):
         :param e: Mouse event
         :return: None
         """
-        # if is_linux or is_mac:
-        #     if e.mimeData().hasFormat('text/plain') and e.mimeData().text()[-6:-2] == ".pdf":
-        #         e.accept()
-        #     else:
-        #         e.ignore()
-        # elif is_win:
-        #     if e.mimeData().text()[-4:] == ".pdf":
-        #         e.accept()
-        #     else:
-        #         e.ignore()
-        e.accept()
+        if '.pdf' in e.mimeData().text()[-6:]:  # pdf 文件 才支持拖拽
+            e.accept()
+        else:
+            e.ignore()
 
     def dropEvent(self, e):
         """
@@ -87,7 +80,7 @@ class PdfViewer(QWebEngineView):
         :param e: Mouse event
         :return: None
         """
-        print(e.mimeData().text())
+        self.load_pdf_file(e.mimeData().text())
 
     def event(self, e):
         """
