@@ -8,7 +8,7 @@
 
 import os
 
-from PyQt5.QtGui import QFont
+from PyQt5.QtGui import QFont, QIcon
 from PyQt5.QtWidgets import QMainWindow, QFileDialog, QApplication
 
 from modules.configure import Configure
@@ -27,6 +27,7 @@ class MainWindow(QMainWindow):
         self.ui = Ui_MainWindow()
         self.ui.setupUi(self)  # 加载 UI 设定
         self.ui.sidebar.hide()  # 逻辑隐藏侧边栏
+        self.setWindowIcon(QIcon("./resource/images/main_window.ico"))
 
         self.list_history_filename = []
         self.list_history_filepath = []
