@@ -275,7 +275,6 @@ class Ui_MainWindow(object):
         self.toolBar.addAction(self.action_paper_assistant)
         self.toolBar.addAction(self.action_document_translate)
         self.toolBar.addSeparator()
-        self.toolBar.addAction(self.action_feedback)
 
         self.retranslateUi(MainWindow)
         self.action_app_exit.triggered.connect(MainWindow.close)

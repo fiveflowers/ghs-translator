@@ -2,339 +2,336 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-     <property name="geometry">
-         <rect>
-             <x>0</x>
-             <y>0</y>
-             <width>1254</width>
-             <height>800</height>
-         </rect>
-     </property>
-     <property name="minimumSize">
-         <size>
-             <width>1100</width>
-             <height>800</height>
-         </size>
-     </property>
-     <property name="font">
-         <font>
-             <family>DejaVu Sans</family>
-             <pointsize>12</pointsize>
-         </font>
-     </property>
-     <property name="windowTitle">
-         <string>根号三翻译器（GHS Translator） - 论文小助手</string>
-     </property>
-     <property name="iconSize">
-         <size>
-             <width>24</width>
-             <height>24</height>
-         </size>
-     </property>
-     <widget class="QWidget" name="centralwidget">
-         <layout class="QGridLayout" name="gridLayout">
-             <item row="0" column="2">
-                 <widget class="QFrame" name="transbar">
-                     <property name="sizePolicy">
-                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                             <horstretch>1</horstretch>
-                             <verstretch>0</verstretch>
-                         </sizepolicy>
-                     </property>
-                     <property name="maximumSize">
-                         <size>
-                             <width>400</width>
-                             <height>16777215</height>
-                         </size>
-                     </property>
-                     <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QGridLayout" name="gridLayout_3">
-                         <item row="5" column="0">
-                             <layout class="QHBoxLayout" name="horizontalLayout">
-                                 <item>
-                                     <widget class="QToolButton" name="toolButton_font_size_increase">
-                                         <property name="sizePolicy">
-                                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                                 <horstretch>0</horstretch>
-                                                 <verstretch>0</verstretch>
-                                             </sizepolicy>
-                                         </property>
-                                         <property name="toolTip">
-                                             <string>增大字体</string>
-                                         </property>
-                                         <property name="text">
-                                             <string>...</string>
-                                         </property>
-                                         <property name="icon">
-                                             <iconset>
-                                                 <normaloff>../resource/images/zoom_in.png</normaloff>
-                                                 ../resource/images/zoom_in.png
-                                             </iconset>
-                                         </property>
-                                         <property name="iconSize">
-                                             <size>
-                                                 <width>36</width>
-                                                 <height>36</height>
-                                             </size>
-                                         </property>
-                                     </widget>
-                                 </item>
-                                 <item>
-                                     <widget class="QToolButton" name="toolButton_font_size_decrease">
-                                         <property name="sizePolicy">
-                                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                                 <horstretch>0</horstretch>
-                                                 <verstretch>0</verstretch>
-                                             </sizepolicy>
-                                         </property>
-                                         <property name="toolTip">
-                                             <string>减小字体</string>
-                                         </property>
-                                         <property name="text">
-                                             <string>...</string>
-                                         </property>
-                                         <property name="icon">
-                                             <iconset>
-                                                 <normaloff>../resource/images/zoom_out.png</normaloff>
-                                                 ../resource/images/zoom_out.png
-                                             </iconset>
-                                         </property>
-                                         <property name="iconSize">
-                                             <size>
-                                                 <width>36</width>
-                                                 <height>36</height>
-                                             </size>
-                                         </property>
-                                     </widget>
-                                 </item>
-                                 <item>
-                                     <widget class="QToolButton" name="toolButton_copy">
-                                         <property name="sizePolicy">
-                                             <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
-                                                 <horstretch>0</horstretch>
-                                                 <verstretch>0</verstretch>
-                                             </sizepolicy>
-                                         </property>
-                                         <property name="toolTip">
-                                             <string>复制翻译结果</string>
-                                         </property>
-                                         <property name="text">
-                                             <string>...</string>
-                                         </property>
-                                         <property name="icon">
-                                             <iconset>
-                                                 <normaloff>../resource/images/copy.png</normaloff>
-                                                 ../resource/images/copy.png
-                                             </iconset>
-                                         </property>
-                                         <property name="iconSize">
-                                             <size>
-                                                 <width>36</width>
-                                                 <height>36</height>
-                                             </size>
-                                         </property>
-                                     </widget>
-                                 </item>
-                             </layout>
-                         </item>
-                         <item row="1" column="0">
-                             <widget class="QLabel" name="label_original_text">
-                                 <property name="font">
-                                     <font>
-                                         <pointsize>12</pointsize>
-                                     </font>
-                                 </property>
-                                 <property name="text">
-                                     <string>翻译文本</string>
-                                 </property>
-                             </widget>
-                         </item>
-                         <item row="2" column="0">
-                             <widget class="QPlainTextEdit" name="plainTextEdit_original_text">
-                                 <property name="enabled">
-                                     <bool>true</bool>
-                                 </property>
-                                 <property name="maximumSize">
-                                     <size>
-                                         <width>16777215</width>
-                                         <height>16777215</height>
-                                     </size>
-                                 </property>
-                                 <property name="font">
-                                     <font>
-                                         <pointsize>12</pointsize>
-                                     </font>
-                                 </property>
-                                 <property name="toolTip">
-                                     <string>可自由修改文本，修改后将自动翻译</string>
-                                 </property>
-                                 <property name="plainText">
-                                     <string/>
-                                 </property>
-                                 <property name="centerOnScroll">
-                                     <bool>false</bool>
-                                 </property>
-                             </widget>
-                         </item>
-                         <item row="4" column="0">
-                             <widget class="QPlainTextEdit" name="plainTextEdit_translated_text">
-                                 <property name="maximumSize">
-                                     <size>
-                                         <width>16777215</width>
-                                         <height>16777215</height>
-                                     </size>
-                                 </property>
-                                 <property name="font">
-                                     <font>
-                                         <pointsize>12</pointsize>
-                                     </font>
-                                 </property>
-                                 <property name="toolTip">
-                                     <string>基于谷歌翻译</string>
-                                 </property>
-                                 <property name="plainText">
-                                     <string/>
-                                 </property>
-                             </widget>
-                         </item>
-                         <item row="3" column="0">
-                             <widget class="QLabel" name="label_translated_text">
-                                 <property name="font">
-                                     <font>
-                                         <family>Sans Serif</family>
-                                         <pointsize>12</pointsize>
-                                         <weight>50</weight>
-                                         <bold>false</bold>
-                                     </font>
-                                 </property>
-                                 <property name="text">
-                                     <string>翻译结果</string>
-                                 </property>
-                             </widget>
-                         </item>
-                     </layout>
-                 </widget>
-             </item>
-             <item row="0" column="0">
-                 <widget class="QFrame" name="sidebar">
-                     <property name="sizePolicy">
-                         <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
-                             <horstretch>1</horstretch>
-                             <verstretch>0</verstretch>
-                         </sizepolicy>
-                     </property>
-                     <property name="maximumSize">
-                         <size>
-                             <width>300</width>
-                             <height>16777215</height>
-                         </size>
-                     </property>
-                     <property name="toolTip">
-                         <string>侧边栏，可以通过上方工具栏隐藏</string>
-                     </property>
-                     <property name="frameShape">
-                         <enum>QFrame::StyledPanel</enum>
-                     </property>
-                     <property name="frameShadow">
-                         <enum>QFrame::Raised</enum>
-                     </property>
-                     <layout class="QGridLayout" name="gridLayout_2">
-                         <item row="1" column="0">
-                             <widget class="QListWidget" name="listWidget_files_in_dir">
-                                 <property name="enabled">
-                                     <bool>true</bool>
-                                 </property>
-                                 <property name="maximumSize">
-                                     <size>
-                                         <width>16777215</width>
-                                         <height>16777215</height>
-                                     </size>
-                                 </property>
-                                 <property name="font">
-                                     <font>
-                                         <pointsize>12</pointsize>
-                                     </font>
-                                 </property>
-                             </widget>
-                         </item>
-                         <item row="2" column="0">
-                             <widget class="QLabel" name="label_history">
-                                 <property name="font">
-                                     <font>
-                                         <pointsize>12</pointsize>
-                                     </font>
-                                 </property>
-                                 <property name="text">
-                                     <string>最近文档</string>
-                                 </property>
-                             </widget>
-                         </item>
-                         <item row="0" column="0">
-                             <widget class="QLabel" name="label_folder">
-                                 <property name="font">
-                                     <font>
-                                         <pointsize>12</pointsize>
-                                     </font>
-                                 </property>
-                                 <property name="text">
-                                     <string>当前目录</string>
-                                 </property>
-                             </widget>
-                         </item>
-                         <item row="3" column="0">
-                             <widget class="QListWidget" name="listWidget_history">
-                                 <property name="enabled">
-                                     <bool>true</bool>
-                                 </property>
-                                 <property name="maximumSize">
-                                     <size>
-                                         <width>16777215</width>
-                                         <height>16777215</height>
-                                     </size>
-                                 </property>
-                                 <property name="font">
-                                     <font>
-                                         <pointsize>12</pointsize>
-                                     </font>
-                                 </property>
-                             </widget>
-                         </item>
-                     </layout>
-                 </widget>
-             </item>
-             <item row="0" column="1">
-                 <spacer name="horizontalSpacer">
-                     <property name="orientation">
-                         <enum>Qt::Horizontal</enum>
-                     </property>
-                     <property name="sizeType">
-                         <enum>QSizePolicy::Fixed</enum>
-                     </property>
-                     <property name="sizeHint" stdset="0">
-                         <size>
-                             <width>5</width>
-                             <height>20</height>
-                         </size>
-                     </property>
-                 </spacer>
-             </item>
-         </layout>
-     </widget>
-     <widget class="QMenuBar" name="menubar">
-         <property name="geometry">
-             <rect>
-                 <x>0</x>
-                 <y>0</y>
-                 <width>1254</width>
-                 <height>29</height>
-             </rect>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1254</width>
+    <height>800</height>
+   </rect>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>1100</width>
+    <height>800</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <family>DejaVu Sans</family>
+    <pointsize>12</pointsize>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>根号三翻译器（GHS Translator） - 论文小助手</string>
+  </property>
+  <property name="iconSize">
+   <size>
+    <width>24</width>
+    <height>24</height>
+   </size>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="2">
+     <widget class="QFrame" name="transbar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>400</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_3">
+       <item row="5" column="0">
+        <layout class="QHBoxLayout" name="horizontalLayout">
+         <item>
+          <widget class="QToolButton" name="toolButton_font_size_increase">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>增大字体</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../resource/images/zoom_in.png</normaloff>../resource/images/zoom_in.png
+            </iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>36</width>
+             <height>36</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_font_size_decrease">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>减小字体</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../resource/images/zoom_out.png</normaloff>../resource/images/zoom_out.png
+            </iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>36</width>
+             <height>36</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QToolButton" name="toolButton_copy">
+           <property name="sizePolicy">
+            <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+             <horstretch>0</horstretch>
+             <verstretch>0</verstretch>
+            </sizepolicy>
+           </property>
+           <property name="toolTip">
+            <string>复制翻译结果</string>
+           </property>
+           <property name="text">
+            <string>...</string>
+           </property>
+           <property name="icon">
+            <iconset>
+             <normaloff>../resource/images/copy.png</normaloff>../resource/images/copy.png
+            </iconset>
+           </property>
+           <property name="iconSize">
+            <size>
+             <width>36</width>
+             <height>36</height>
+            </size>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item row="1" column="0">
+        <widget class="QLabel" name="label_original_text">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
          </property>
-         <property name="nativeMenuBar">
+         <property name="text">
+          <string>翻译文本</string>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QPlainTextEdit" name="plainTextEdit_original_text">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>可自由修改文本，修改后将自动翻译</string>
+         </property>
+         <property name="plainText">
+          <string/>
+         </property>
+         <property name="centerOnScroll">
+          <bool>false</bool>
+         </property>
+        </widget>
+       </item>
+       <item row="4" column="0">
+        <widget class="QPlainTextEdit" name="plainTextEdit_translated_text">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="toolTip">
+          <string>基于谷歌翻译</string>
+         </property>
+         <property name="plainText">
+          <string/>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QLabel" name="label_translated_text">
+         <property name="font">
+          <font>
+           <family>Sans Serif</family>
+           <pointsize>12</pointsize>
+           <weight>50</weight>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="text">
+          <string>翻译结果</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="0">
+     <widget class="QFrame" name="sidebar">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
+        <horstretch>1</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>300</width>
+        <height>16777215</height>
+       </size>
+      </property>
+      <property name="toolTip">
+       <string>侧边栏，可以通过上方工具栏隐藏</string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QGridLayout" name="gridLayout_2">
+       <item row="1" column="0">
+        <widget class="QListWidget" name="listWidget_files_in_dir">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+       <item row="2" column="0">
+        <widget class="QLabel" name="label_history">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>最近文档</string>
+         </property>
+        </widget>
+       </item>
+       <item row="0" column="0">
+        <widget class="QLabel" name="label_folder">
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+         <property name="text">
+          <string>当前目录</string>
+         </property>
+        </widget>
+       </item>
+       <item row="3" column="0">
+        <widget class="QListWidget" name="listWidget_history">
+         <property name="enabled">
+          <bool>true</bool>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="font">
+          <font>
+           <pointsize>12</pointsize>
+          </font>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeType">
+       <enum>QSizePolicy::Fixed</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>5</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1254</width>
+     <height>29</height>
+    </rect>
+   </property>
+   <property name="nativeMenuBar">
     <bool>true</bool>
    </property>
    <widget class="QMenu" name="menu_file">
@@ -409,7 +406,6 @@
    <addaction name="action_paper_assistant"/>
    <addaction name="action_document_translate"/>
    <addaction name="separator"/>
-   <addaction name="action_feedback"/>
   </widget>
   <action name="action_open_file">
    <property name="icon">
@@ -486,55 +482,57 @@
   <action name="action_sidebar_hide">
    <property name="icon">
     <iconset>
-     <normaloff>../resource/images/sidebar_hide.png</normaloff>../resource/images/sidebar_hide.png</iconset>
+     <normaloff>../resource/images/sidebar_hide.png</normaloff>../resource/images/sidebar_hide.png
+    </iconset>
    </property>
    <property name="text">
     <string>隐藏侧边栏</string>
    </property>
   </action>
-     <action name="action_paper_assistant">
-         <property name="enabled">
-             <bool>false</bool>
-         </property>
-         <property name="icon">
-             <iconset>
-                 <normaloff>../resource/images/paper-assistant.ico</normaloff>../resource/images/paper-assistant.ico
-             </iconset>
-         </property>
-         <property name="text">
-             <string>写作助手</string>
-         </property>
-     </action>
-     <action name="action_document_translate">
-         <property name="enabled">
-             <bool>false</bool>
-         </property>
-         <property name="icon">
-             <iconset>
-                 <normaloff>../resource/images/file_translate.ico</normaloff>../resource/images/file_translate.ico
-             </iconset>
-         </property>
-         <property name="text">
-             <string>文档翻译</string>
-         </property>
-     </action>
-     <action name="action_app_about">
-         <property name="enabled">
-             <bool>false</bool>
-         </property>
-         <property name="icon">
-             <iconset>
-                 <normaloff>../resource/images/app_about.ico</normaloff>../resource/images/app_about.ico
-             </iconset>
-         </property>
-         <property name="text">
-             <string>软件信息</string>
-         </property>
-     </action>
+  <action name="action_paper_assistant">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/paper-assistant.ico</normaloff>../resource/images/paper-assistant.ico
+    </iconset>
+   </property>
+   <property name="text">
+    <string>写作助手</string>
+   </property>
+  </action>
+  <action name="action_document_translate">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/file_translate.ico</normaloff>../resource/images/file_translate.ico
+    </iconset>
+   </property>
+   <property name="text">
+    <string>文档翻译</string>
+   </property>
+  </action>
+  <action name="action_app_about">
+   <property name="enabled">
+    <bool>false</bool>
+   </property>
+   <property name="icon">
+    <iconset>
+     <normaloff>../resource/images/app_about.ico</normaloff>../resource/images/app_about.ico
+    </iconset>
+   </property>
+   <property name="text">
+    <string>软件信息</string>
+   </property>
+  </action>
   <action name="action_feedback">
    <property name="icon">
     <iconset>
-     <normaloff>../resource/images/feedback.ico</normaloff>../resource/images/feedback.ico</iconset>
+     <normaloff>../resource/images/feedback.ico</normaloff>../resource/images/feedback.ico
+    </iconset>
    </property>
    <property name="text">
     <string>意见反馈</string>
@@ -578,50 +576,50 @@
   <connection>
    <sender>action_window_reset</sender>
    <signal>triggered()</signal>
-      <receiver>MainWindow</receiver>
-      <slot>showNormal()</slot>
-      <hints>
-          <hint type="sourcelabel">
-              <x>-1</x>
-              <y>-1</y>
-          </hint>
-          <hint type="destinationlabel">
-              <x>399</x>
-              <y>299</y>
-          </hint>
-      </hints>
+   <receiver>MainWindow</receiver>
+   <slot>showNormal()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>399</x>
+     <y>299</y>
+    </hint>
+   </hints>
   </connection>
-     <connection>
-         <sender>action_sidebar_hide</sender>
-         <signal>triggered()</signal>
-         <receiver>sidebar</receiver>
-         <slot>hide()</slot>
-         <hints>
-             <hint type="sourcelabel">
-                 <x>-1</x>
-                 <y>-1</y>
-             </hint>
-             <hint type="destinationlabel">
-                 <x>158</x>
-                 <y>430</y>
-             </hint>
-         </hints>
-     </connection>
-     <connection>
-         <sender>action_sidebar_show</sender>
-         <signal>triggered()</signal>
-         <receiver>sidebar</receiver>
-         <slot>show()</slot>
-         <hints>
-             <hint type="sourcelabel">
-                 <x>-1</x>
-                 <y>-1</y>
-             </hint>
-             <hint type="destinationlabel">
-                 <x>158</x>
-                 <y>430</y>
-             </hint>
-         </hints>
-     </connection>
+  <connection>
+   <sender>action_sidebar_hide</sender>
+   <signal>triggered()</signal>
+   <receiver>sidebar</receiver>
+   <slot>hide()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>158</x>
+     <y>430</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>action_sidebar_show</sender>
+   <signal>triggered()</signal>
+   <receiver>sidebar</receiver>
+   <slot>show()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>-1</x>
+     <y>-1</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>158</x>
+     <y>430</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
 </ui>

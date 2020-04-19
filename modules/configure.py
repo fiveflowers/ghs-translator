@@ -19,6 +19,22 @@ class Configure(object):
         self.history.read(self.path_history)
 
     def add_history(self, key, value):
+        """
+        添加历史记录到配置文件中
+        :param key: 文件名
+        :param value: 文件路径
+        :return: None
+        """
         with open(self.path_history, 'w') as f:
             self.history.set('History', key, value)
+            self.history.write(f)
+
+    def clean_history(self):
+        """
+        清空历史记录
+        :return:
+        """
+        self.history.remove_section('History')
+        self.history.add_section('History')
+        with open(self.path_history, 'w') as f:
             self.history.write(f)

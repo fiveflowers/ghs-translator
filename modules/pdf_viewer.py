@@ -55,6 +55,14 @@ class PdfViewer(QWebEngineView):
             path = CrossPlatform.path_converter(self.default_viewer + '?file=' + pdf_file_path)
             self.setUrl(QUrl(path))
 
+    def load_url(self, url):
+        """
+        加载网页
+        :param url: 网址链接
+        :return: None
+        """
+        self.setUrl(QUrl(url))
+
     def event(self, e):
         """
         Detect child add event, as QWebEngineView do not capture mouse event directly,
