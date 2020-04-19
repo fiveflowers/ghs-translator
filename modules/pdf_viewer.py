@@ -12,6 +12,7 @@ from PyQt5.QtCore import pyqtSignal, QUrl, QEvent
 from PyQt5.QtWebEngineWidgets import QWebEngineView
 from PyQt5.QtWidgets import QSizePolicy
 
+from modules.configure import Configure
 from modules.cross_platform import CrossPlatform
 
 
@@ -39,14 +40,20 @@ class PdfViewer(QWebEngineView):
     def load_pdf_file(self, pdf_file_path):
         """
         加载用户自定义pdf文件
+        并添加到历史记录文件中
         :param pdf_file_path: pdf文件路径，若为‘default’，则加载默认页面
-        :return:
+        :return: None
         """
         if pdf_file_path == 'default':
             path = CrossPlatform.path_converter(self.default_viewer)
             self.setUrl(QUrl(path))
-        else:
-            pass
+        else:  # 打开用户指定的pdf文件
+            config = Configure()
+            filename_base = os.path.basename(pdf_file_path)  # basename是带有文件扩展名的
+            filename = filename_base[:-4]  # 获得无扩展名的文件名
+            config.add_history(filename, pdf_file_path)  # 添加历史记录
+            path = CrossPlatform.path_converter(self.default_viewer + '?file=' + pdf_file_path)
+            self.setUrl(QUrl(path))
 
     def event(self, e):
         """
