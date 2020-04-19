@@ -63,6 +63,32 @@ class PdfViewer(QWebEngineView):
         """
         self.setUrl(QUrl(url))
 
+    def dragEnterEvent(self, e):
+        """
+        Detect mouse drag something into the viewer
+        :param e: Mouse event
+        :return: None
+        """
+        # if is_linux or is_mac:
+        #     if e.mimeData().hasFormat('text/plain') and e.mimeData().text()[-6:-2] == ".pdf":
+        #         e.accept()
+        #     else:
+        #         e.ignore()
+        # elif is_win:
+        #     if e.mimeData().text()[-4:] == ".pdf":
+        #         e.accept()
+        #     else:
+        #         e.ignore()
+        e.accept()
+
+    def dropEvent(self, e):
+        """
+        Detect mouse release event the view and state before release is dragging
+        :param e: Mouse event
+        :return: None
+        """
+        print(e.mimeData().text())
+
     def event(self, e):
         """
         Detect child add event, as QWebEngineView do not capture mouse event directly,
