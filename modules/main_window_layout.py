@@ -30,7 +30,7 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.transbar.sizePolicy().hasHeightForWidth())
         self.transbar.setSizePolicy(sizePolicy)
-        self.transbar.setMaximumSize(QtCore.QSize(400, 16777215))
+        self.transbar.setMaximumSize(QtCore.QSize(450, 16777215))
         self.transbar.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.transbar.setFrameShadow(QtWidgets.QFrame.Raised)
         self.transbar.setObjectName("transbar")
