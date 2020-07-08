@@ -38,13 +38,13 @@ python ghs-translator.py
 ```
 
 ## Releases
-- Windows: Coming soon
+- Windows: [【GitHub】](https://github.com/yifer97/ghs-translator/releases/latest) [【百度网盘: n427】](https://pan.baidu.com/s/14IR3UTF5F63aggw-vNOHuw)
 - Linux: [【GitHub】](https://github.com/yifer97/ghs-translator/releases/latest) [【百度网盘: n427】](https://pan.baidu.com/s/16MhsADg1sPrJx2eFEHhsEA)
 - Mac OS: Coming soon
 
 ## TODO
 - [x] Linux Platform package
-- [ ] Windows Platform package
+- [x] Windows Platform package
 - [ ] Mac OS Platform package
 
 ## Contributor
