@@ -20,7 +20,7 @@
 ## Installation
 ### 1. Clone this repo
 ```shell
-git clone https://github.com/yifer97/ghs-translator.git
+git clone https://github.com/fiveflowers/ghs-translator.git
 ```
 ### 2. Dependencies 
 
