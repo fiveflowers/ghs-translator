@@ -9,7 +9,7 @@
 <img src="https://img.shields.io/badge/-OSX-black?logo=apple">
 <img src="https://img.shields.io/badge/-Windows-blue?logo=windows">
 <img src="https://img.shields.io/badge/Python-3-blueviolet?logo=python">
-<img src="https://img.shields.io/github/license/yifer97/ghs-translator">
+<img src="https://img.shields.io/github/license/fiveflowers/ghs-translator">
 
 <br/>
 
@@ -38,8 +38,8 @@ python ghs-translator.py
 ```
 
 ## Releases
-- Windows: [【GitHub】](https://github.com/yifer97/ghs-translator/releases/latest) [【百度网盘: n427】](https://pan.baidu.com/s/14IR3UTF5F63aggw-vNOHuw)
-- Linux: [【GitHub】](https://github.com/yifer97/ghs-translator/releases/latest) [【百度网盘: n427】](https://pan.baidu.com/s/16MhsADg1sPrJx2eFEHhsEA)
+- Windows: [【GitHub】](https://github.com/fiveflowers/ghs-translator/releases/latest) [【百度网盘: n427】](https://pan.baidu.com/s/14IR3UTF5F63aggw-vNOHuw)
+- Linux: [【GitHub】](https://github.com/fiveflowers/ghs-translator/releases/latest) [【百度网盘: n427】](https://pan.baidu.com/s/16MhsADg1sPrJx2eFEHhsEA)
 - Mac OS: Coming soon
 
 ## TODO
