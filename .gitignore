@@ -1,6 +1,8 @@
 # pycharm
 .idea/
 
+# vscode
+.vscode/
 
 # cache
-modules/__pycache__/
+__pycache__/
