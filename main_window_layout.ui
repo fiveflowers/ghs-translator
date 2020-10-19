@@ -29,14 +29,40 @@
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
      <layout class="QGridLayout" name="main_gridLayout">
-      <item row="1" column="0" colspan="4">
-       <widget class="QPlainTextEdit" name="plainTextEdit_src">
-        <property name="plainText">
-         <string>请键入需要翻译的文本...</string>
+      <item row="2" column="0" colspan="2">
+       <widget class="QComboBox" name="comboBox_dest_lang">
+        <item>
+         <property name="text">
+          <string>目标语言：中文</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>res/lang_cn.png</normaloff>res/lang_cn.png</iconset>
+         </property>
+        </item>
+        <item>
+         <property name="text">
+          <string>目标语言：英文</string>
+         </property>
+         <property name="icon">
+          <iconset>
+           <normaloff>res/lang_en.png</normaloff>res/lang_en.png</iconset>
+         </property>
+        </item>
+       </widget>
+      </item>
+      <item row="2" column="3">
+       <widget class="QPushButton" name="pushButton_clear">
+        <property name="text">
+         <string>清屏</string>
+        </property>
+        <property name="icon">
+         <iconset>
+          <normaloff>res/clear.png</normaloff>res/clear.png</iconset>
         </property>
        </widget>
       </item>
-      <item row="3" column="3">
+      <item row="2" column="2">
        <widget class="QPushButton" name="pushButton_copy">
         <property name="text">
          <string>复制</string>
@@ -49,7 +75,7 @@
       </item>
       <item row="0" column="2">
        <widget class="QComboBox" name="comboBox_trans_api">
-        <property name="placeholderText">
+        <property name="placeholderText" stdset="0">
          <string>翻译接口</string>
         </property>
         <item>
@@ -79,35 +105,6 @@
            <normaloff>res/translate_baidu.png</normaloff>res/translate_baidu.png</iconset>
          </property>
         </item>
-       </widget>
-      </item>
-      <item row="3" column="0" colspan="2">
-       <widget class="QComboBox" name="comboBox_dest_lang">
-        <item>
-         <property name="text">
-          <string>目标语言：中文</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>res/lang_cn.png</normaloff>res/lang_cn.png</iconset>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>目标语言：英文</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>res/lang_en.png</normaloff>res/lang_en.png</iconset>
-         </property>
-        </item>
-       </widget>
-      </item>
-      <item row="4" column="0" colspan="4">
-       <widget class="QPlainTextEdit" name="plainTextEdit_dest">
-        <property name="plainText">
-         <string>Please type the TEXT to be translated...</string>
-        </property>
        </widget>
       </item>
       <item row="0" column="0" colspan="2">
@@ -144,17 +141,6 @@
         </item>
        </widget>
       </item>
-      <item row="3" column="2">
-       <widget class="QPushButton" name="pushButton_clear">
-        <property name="text">
-         <string>清屏</string>
-        </property>
-        <property name="icon">
-         <iconset>
-          <normaloff>res/clear.png</normaloff>res/clear.png</iconset>
-        </property>
-       </widget>
-      </item>
       <item row="0" column="3">
        <widget class="QPushButton" name="pushButton_screen_shot">
         <property name="enabled">
@@ -162,6 +148,20 @@
         </property>
         <property name="text">
          <string>截图翻译</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="0" colspan="4">
+       <widget class="QPlainTextEdit" name="plainTextEdit_src">
+        <property name="plainText">
+         <string>请键入需要翻译的文本...</string>
+        </property>
+       </widget>
+      </item>
+      <item row="3" column="0" colspan="4">
+       <widget class="QPlainTextEdit" name="plainTextEdit_dest">
+        <property name="plainText">
+         <string>Please type the TEXT to be translated...</string>
         </property>
        </widget>
       </item>
