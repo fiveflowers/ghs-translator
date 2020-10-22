@@ -5,15 +5,20 @@
 # @File    : main_window.py
 # @Desc    : 主窗口程序
 
-from PyQt5.QtWidgets import QMainWindow, QApplication
-from PyQt5 import QtCore
+import threading
+import time
 
-from main_window_layout import Ui_MainWindow
-from engine.translator import GoogleTrans, YouDaoTrans, BaiDuTrans
+from PyQt5 import QtCore
+from PyQt5.QtWidgets import QMainWindow, QApplication
+
 from engine import misc
+from engine.translator import GoogleTrans, BaiDuTrans
+from main_window_layout import Ui_MainWindow
 
 
 class MainWindow(QMainWindow):
+    signal_thread = QtCore.pyqtSignal()
+
     def __init__(self):
         super(MainWindow, self).__init__()
 
@@ -21,19 +26,24 @@ class MainWindow(QMainWindow):
         self.ui.setupUi(self)  # 给主窗口加载UI
         self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)  # 窗口置顶
         self.connect_signal_and_slot()  # 绑定信号和槽
+        self.FLAG = False  # 翻译服务 全局 Flag
+        self.last_trans_time = time.time()  # 存储上次翻译的时间戳
+        self.trans_thread = threading.Thread(target=self.action)  # 新建子线程,用于计时
+        self.trans_thread.setDaemon(True)  # 守护进程
+        self.trans_thread.start()  # 启动线程
         self.mytranslator = {
             '谷歌': GoogleTrans(),
             '百度': BaiDuTrans(),
-            '有道': YouDaoTrans()
         }
 
     def connect_signal_and_slot(self):
         self.ui.comboBox_src_lang.currentIndexChanged.connect(self.slot_translate)
         self.ui.comboBox_dest_lang.currentIndexChanged.connect(self.slot_translate)
         self.ui.comboBox_trans_api.currentIndexChanged.connect(self.slot_translate)
-        self.ui.plainTextEdit_src.textChanged.connect(self.slot_translate)
+        self.ui.plainTextEdit_src.textChanged.connect(self.slot_text_changed)
         self.ui.pushButton_clear.clicked.connect(self.slot_clear)
         self.ui.pushButton_copy.clicked.connect(self.slot_copy_text)
+        self.signal_thread.connect(self.slot_translate)
 
     def slot_translate(self):
         """
@@ -51,16 +61,15 @@ class MainWindow(QMainWindow):
         if src_text == '' or len(src_text) > max_len:  # 空字符或者超过字数限制调用翻译
             return
 
-        src_text = misc.format_text(src_text)  # 格式化文本
+        src_text_formatted = misc.format_text(src_text)  # 格式化文本
         src_lang = self.ui.comboBox_src_lang.currentText()[-2:]  # 获取src语言
-
-        self.ui.plainTextEdit_src.textChanged.disconnect(self.slot_translate)
-        self.ui.plainTextEdit_src.setPlainText(src_text)  # 显示格式化后的文本（去换行）
-        self.ui.plainTextEdit_src.textChanged.connect(self.slot_translate)
+        if src_text != src_text_formatted:
+            self.ui.plainTextEdit_src.setPlainText(src_text_formatted)  # 显示格式化后的文本（去换行）
 
         api_type = self.ui.comboBox_trans_api.currentText()  # 获取选用的翻译API
         dest_lang = self.ui.comboBox_dest_lang.currentText()[-2:]  # 获取dest语言
-        dest_text = self.mytranslator[api_type].trans(src_text, lang_dict[src_lang], lang_dict[dest_lang])  # 翻译
+        dest_text = self.mytranslator[api_type].trans(src_text_formatted, lang_dict[src_lang],
+                                                      lang_dict[dest_lang])  # 翻译
         self.ui.plainTextEdit_dest.setPlainText(dest_text)  # 显示翻译后的文本
 
     def slot_clear(self):
@@ -77,3 +86,18 @@ class MainWindow(QMainWindow):
         dest_text = self.ui.plainTextEdit_dest.toPlainText()  # 获取翻译结果文本
         clipboard = QApplication.clipboard()
         clipboard.setText(str(dest_text))
+
+    def action(self):
+        while True:
+            current_time = time.time()
+            if self.FLAG and current_time - self.last_trans_time < 2:
+                print('子线程: 启动翻译函数')
+                self.signal_thread.emit()
+            time.sleep(1.5)
+
+    def slot_text_changed(self):
+        """
+        槽: 文本变化
+        """
+        self.FLAG = True
+        self.last_trans_time = time.time()
