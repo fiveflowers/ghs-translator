@@ -58,7 +58,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../images/clear.png</normaloff>../images/clear.png</iconset>
+          <normaloff>images/clear.png</normaloff>images/clear.png
+         </iconset>
         </property>
        </widget>
       </item>
@@ -69,7 +70,8 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>../images/copy.png</normaloff>../images/copy.png</iconset>
+          <normaloff>images/copy.png</normaloff>images/copy.png
+         </iconset>
         </property>
        </widget>
       </item>
@@ -85,15 +87,6 @@
          <property name="icon">
           <iconset>
            <normaloff>images/translate_google.ico</normaloff>images/translate_google.ico</iconset>
-         </property>
-        </item>
-        <item>
-         <property name="text">
-          <string>有道</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>images/translate_youdao.ico</normaloff>images/translate_youdao.ico</iconset>
          </property>
         </item>
         <item>
