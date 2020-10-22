@@ -37,7 +37,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>res/lang_cn.png</normaloff>res/lang_cn.png</iconset>
+           <normaloff>images/lang_cn.png</normaloff>images/lang_cn.png</iconset>
          </property>
         </item>
         <item>
@@ -46,7 +46,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>res/lang_en.png</normaloff>res/lang_en.png</iconset>
+           <normaloff>images/lang_en.png</normaloff>images/lang_en.png</iconset>
          </property>
         </item>
        </widget>
@@ -58,7 +58,7 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>res/clear.png</normaloff>res/clear.png</iconset>
+          <normaloff>../images/clear.png</normaloff>../images/clear.png</iconset>
         </property>
        </widget>
       </item>
@@ -69,13 +69,13 @@
         </property>
         <property name="icon">
          <iconset>
-          <normaloff>res/copy.png</normaloff>res/copy.png</iconset>
+          <normaloff>../images/copy.png</normaloff>../images/copy.png</iconset>
         </property>
        </widget>
       </item>
       <item row="0" column="2">
        <widget class="QComboBox" name="comboBox_trans_api">
-        <property name="placeholderText" stdset="0">
+        <property name="placeholderText">
          <string>翻译接口</string>
         </property>
         <item>
@@ -84,7 +84,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>res/translate_google.ico</normaloff>res/translate_google.ico</iconset>
+           <normaloff>images/translate_google.ico</normaloff>images/translate_google.ico</iconset>
          </property>
         </item>
         <item>
@@ -93,7 +93,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>res/translate_youdao.ico</normaloff>res/translate_youdao.ico</iconset>
+           <normaloff>images/translate_youdao.ico</normaloff>images/translate_youdao.ico</iconset>
          </property>
         </item>
         <item>
@@ -102,7 +102,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>res/translate_baidu.png</normaloff>res/translate_baidu.png</iconset>
+           <normaloff>images/translate_baidu.png</normaloff>images/translate_baidu.png</iconset>
          </property>
         </item>
        </widget>
@@ -118,7 +118,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>res/lang_auto.png</normaloff>res/lang_auto.png</iconset>
+           <normaloff>images/lang_auto.png</normaloff>images/lang_auto.png</iconset>
          </property>
         </item>
         <item>
@@ -127,7 +127,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>res/lang_cn.png</normaloff>res/lang_cn.png</iconset>
+           <normaloff>images/lang_cn.png</normaloff>images/lang_cn.png</iconset>
          </property>
         </item>
         <item>
@@ -136,7 +136,7 @@
          </property>
          <property name="icon">
           <iconset>
-           <normaloff>res/lang_en.png</normaloff>res/lang_en.png</iconset>
+           <normaloff>images/lang_en.png</normaloff>images/lang_en.png</iconset>
          </property>
         </item>
        </widget>

@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # @Time    : 2020/10/11
 # @Author  : Yifer Huang
-# @File    : ghs-translator.py
+# @File    : main.py
 # @Desc    : 主程序
 
 import sys

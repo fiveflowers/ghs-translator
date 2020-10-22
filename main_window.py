@@ -9,8 +9,8 @@ from PyQt5.QtWidgets import QMainWindow, QApplication
 from PyQt5 import QtCore
 
 from main_window_layout import Ui_MainWindow
-from translator import GoogleTrans, YouDaoTrans, BaiDuTrans
-import misc
+from engine.translator import GoogleTrans, YouDaoTrans, BaiDuTrans
+from engine import misc
 
 
 class MainWindow(QMainWindow):
