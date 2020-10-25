@@ -10,8 +10,8 @@ import threading
 import time
 
 from PyQt5 import QtCore
-from PyQt5.QtGui import QKeySequence
-from PyQt5.QtWidgets import QMainWindow, QApplication, QShortcut
+from PyQt5.QtGui import QKeySequence, QIcon
+from PyQt5.QtWidgets import QMainWindow, QApplication, QShortcut, QSystemTrayIcon
 
 from engine import misc
 from engine.cross_platform import HOT_KEY_MINIMIZED, HOT_KEY_CLOSE
@@ -43,6 +43,11 @@ class MainWindow(QMainWindow):
         # 快捷键
         QShortcut(QKeySequence(self.tr(HOT_KEY_MINIMIZED[self.platform])), self, self.showMinimized)  # 最小化
         QShortcut(QKeySequence(self.tr(HOT_KEY_CLOSE[self.platform])), self, self.close)  # 关闭程序
+
+        # 托盘图标
+        self.tray_icon = QSystemTrayIcon(self)
+        self.tray_icon.setIcon(QIcon('images/translate_tray.png'))
+        self.tray_icon.show()
 
     def connect_signal_and_slot(self):
         self.ui.comboBox_src_lang.currentIndexChanged.connect(self.slot_translate)
