@@ -5,13 +5,16 @@
 # @File    : main_window.py
 # @Desc    : 主窗口程序
 
+import platform
 import threading
 import time
 
 from PyQt5 import QtCore
-from PyQt5.QtWidgets import QMainWindow, QApplication
+from PyQt5.QtGui import QKeySequence
+from PyQt5.QtWidgets import QMainWindow, QApplication, QShortcut
 
 from engine import misc
+from engine.cross_platform import HOT_KEY_MINIMIZED, HOT_KEY_CLOSE
 from engine.translator import GoogleTrans, BaiDuTrans
 from main_window_layout import Ui_MainWindow
 
@@ -22,6 +25,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
 
+        self.platform = platform.system()  # 获取当前系统
         self.ui = Ui_MainWindow()  # 实例化UI
         self.ui.setupUi(self)  # 给主窗口加载UI
         self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)  # 窗口置顶
@@ -35,6 +39,10 @@ class MainWindow(QMainWindow):
             '谷歌': GoogleTrans(),
             '百度': BaiDuTrans(),
         }
+
+        # 快捷键
+        QShortcut(QKeySequence(self.tr(HOT_KEY_MINIMIZED[self.platform])), self, self.showMinimized)  # 最小化
+        QShortcut(QKeySequence(self.tr(HOT_KEY_CLOSE[self.platform])), self, self.close)  # 关闭程序
 
     def connect_signal_and_slot(self):
         self.ui.comboBox_src_lang.currentIndexChanged.connect(self.slot_translate)
