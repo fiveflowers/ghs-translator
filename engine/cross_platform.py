@@ -9,10 +9,10 @@
 HOT_KEY_MINIMIZED = {
     "macos": "Command+M",
     "Linux": "Ctrl+M",
-    "windows": "Ctrl+M"
+    "Windows": "Ctrl+M"
 }
 HOT_KEY_CLOSE = {
     "macos": "Command+Q",
     "Linux": "Ctrl+Q",
-    "windows": "Ctrl+Q"
+    "Windows": "Ctrl+Q"
 }
