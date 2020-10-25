@@ -25,6 +25,11 @@
   <property name="windowTitle">
    <string>根号三翻译器</string>
   </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>images/translate.png</normaloff>images/translate.png
+   </iconset>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout_2">
     <item row="0" column="0">
@@ -130,7 +135,17 @@
       <item row="3" column="0" colspan="4">
        <widget class="QPlainTextEdit" name="plainTextEdit_dest">
         <property name="plainText">
-         <string>Please type the TEXT to be translated...</string>
+         <string>### Instructions
+          &gt;&gt; Copy text to be translated into this box
+
+          ### Shortcuts
+          &gt;&gt; Minimize window: CTRL / COMMAND + M
+          &gt;&gt; Exit : CTRL / COMMAND + Q
+
+          ### About
+          &gt;&gt; Update: http://dwz.date/cWx6
+          &gt;&gt; Feedback: http://dwz.date/cWxB
+         </string>
         </property>
        </widget>
       </item>
