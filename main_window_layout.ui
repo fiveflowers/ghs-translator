@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>images/translate.png</normaloff>images/translate.png
+    <normaloff>images/translate.svg</normaloff>images/translate.svg
    </iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
