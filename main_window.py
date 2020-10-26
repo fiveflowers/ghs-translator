@@ -11,7 +11,7 @@ import time
 
 from PyQt5 import QtCore
 from PyQt5.QtGui import QKeySequence, QIcon
-from PyQt5.QtWidgets import QMainWindow, QApplication, QShortcut, QSystemTrayIcon
+from PyQt5.QtWidgets import QMainWindow, QApplication, QShortcut, QSystemTrayIcon, QMenu, QAction, qApp
 
 from engine import misc
 from engine.cross_platform import HOT_KEY_MINIMIZED, HOT_KEY_CLOSE, TEXT_SRC, TEXT_DEST
@@ -25,6 +25,7 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super(MainWindow, self).__init__()
 
+        self.tray_icon = QSystemTrayIcon(self)  # 实例化托盘图标
         self.platform = platform.system()  # 获取当前系统
         self.ui = Ui_MainWindow()  # 实例化UI
         self.ui.setupUi(self)  # 给主窗口加载UI
@@ -33,6 +34,8 @@ class MainWindow(QMainWindow):
         self.setWindowFlags(QtCore.Qt.WindowStaysOnTopHint)  # 窗口置顶
         self.connect_signal_and_slot()  # 绑定信号和槽
         self.init_customized_ui()
+        self.init_tray_icon()
+        self.init_shotcuts()
 
         # 一些全局变量
         self.FLAG = False  # 翻译服务 全局 Flag
@@ -49,15 +52,6 @@ class MainWindow(QMainWindow):
             '百度': BaiDuTrans(),
         }
 
-        # 快捷键
-        QShortcut(QKeySequence(self.tr(HOT_KEY_MINIMIZED[self.platform])), self, self.showMinimized)  # 最小化
-        QShortcut(QKeySequence(self.tr(HOT_KEY_CLOSE[self.platform])), self, self.close)  # 关闭程序
-
-        # 托盘图标
-        self.tray_icon = QSystemTrayIcon(self)
-        self.tray_icon.setIcon(QIcon('images/translate_tray.png'))
-        self.tray_icon.show()
-
     def connect_signal_and_slot(self):
         self.ui.comboBox_src_lang.currentIndexChanged.connect(self.slot_translate)
         self.ui.comboBox_dest_lang.currentIndexChanged.connect(self.slot_translate)
@@ -73,6 +67,39 @@ class MainWindow(QMainWindow):
         """
         self.ui.plainTextEdit_src.setPlainText(TEXT_SRC[self.platform])
         self.ui.plainTextEdit_dest.setPlainText(TEXT_DEST[self.platform])
+
+    def init_tray_icon(self):
+        """
+        初始化托盘图标
+        """
+        self.tray_icon.setIcon(QIcon('images/translate_tray.png'))
+        # self.tray_icon.setIcon(self.style().standardIcon(QStyle.SP_ComputerIcon))
+        '''
+            Define and add steps to work with the system tray icon
+            show - show window
+            hide - hide window
+            exit - exit from application
+        '''
+        show_action = QAction("显示程序", self)
+        quit_action = QAction("退出程序", self)
+        hide_action = QAction("隐藏程序", self)
+        show_action.triggered.connect(self.show)
+        hide_action.triggered.connect(self.hide)
+        quit_action.triggered.connect(qApp.quit)
+        tray_menu = QMenu()
+        tray_menu.addAction(show_action)
+        tray_menu.addAction(hide_action)
+        tray_menu.addAction(quit_action)
+        self.tray_icon.setContextMenu(tray_menu)
+        self.tray_icon.show()
+        self.tray_icon.show()
+
+    def init_shotcuts(self):
+        """
+        初始化快捷键
+        """
+        QShortcut(QKeySequence(self.tr(HOT_KEY_MINIMIZED[self.platform])), self, self.hide)  # 最小化
+        QShortcut(QKeySequence(self.tr(HOT_KEY_CLOSE[self.platform])), self, self.close)  # 关闭程序
 
     def slot_translate(self):
         """
