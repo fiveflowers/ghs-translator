@@ -27,7 +27,7 @@
   </property>
   <property name="windowIcon">
    <iconset>
-    <normaloff>images/translate.png</normaloff>images/translate.png
+       <normaloff>images/translate.png</normaloff>images/translate.png
    </iconset>
   </property>
   <widget class="QWidget" name="centralwidget">
@@ -62,9 +62,9 @@
          <string>清屏</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>images/clear.png</normaloff>images/clear.png
-         </iconset>
+            <iconset>
+                <normaloff>images/clear.png</normaloff>images/clear.png
+            </iconset>
         </property>
        </widget>
       </item>
@@ -74,9 +74,9 @@
          <string>复制</string>
         </property>
         <property name="icon">
-         <iconset>
-          <normaloff>images/copy.png</normaloff>images/copy.png
-         </iconset>
+            <iconset>
+                <normaloff>images/copy.png</normaloff>images/copy.png
+            </iconset>
         </property>
        </widget>
       </item>
@@ -117,51 +117,30 @@
       <item row="1" column="0" colspan="4">
        <widget class="QPlainTextEdit" name="plainTextEdit_src">
         <property name="plainText">
-         <string>### 使用说明
-          &gt;&gt; 复制需要翻译的文档到此文本框中
-          &gt;&gt; 软件将自动“去换行”并执行翻译
-
-          ### 快捷键
-          &gt;&gt; 隐藏窗口: CTRL/COMMAND + M
-          &gt;&gt; 退出程序: CTRL/COMMAND + Q
-
-          ### 关于程序
-          &gt;&gt; 软件更新: http://dwz.date/cWx6
-          &gt;&gt; 问题反馈: http://dwz.date/cWxB
-         </string>
+            <string/>
         </property>
        </widget>
       </item>
       <item row="3" column="0" colspan="4">
        <widget class="QPlainTextEdit" name="plainTextEdit_dest">
         <property name="plainText">
-         <string>### Instructions
-          &gt;&gt; Copy text to be translated into this box
-
-          ### Shortcuts
-          &gt;&gt; Minimize window: CTRL / COMMAND + M
-          &gt;&gt; Exit : CTRL / COMMAND + Q
-
-          ### About
-          &gt;&gt; Update: http://dwz.date/cWx6
-          &gt;&gt; Feedback: http://dwz.date/cWxB
-         </string>
+            <string/>
         </property>
        </widget>
       </item>
-      <item row="0" column="2">
-       <widget class="QComboBox" name="comboBox_trans_api">
-        <property name="placeholderText">
-         <string>翻译接口</string>
-        </property>
-        <item>
-         <property name="text">
-          <string>谷歌</string>
-         </property>
-         <property name="icon">
-          <iconset>
-           <normaloff>images/translate_google.ico</normaloff>images/translate_google.ico
-          </iconset>
+         <item row="0" column="2" colspan="2">
+             <widget class="QComboBox" name="comboBox_trans_api">
+                 <property name="placeholderText">
+                     <string>翻译接口</string>
+                 </property>
+                 <item>
+                     <property name="text">
+                         <string>谷歌</string>
+                     </property>
+                     <property name="icon">
+                         <iconset>
+                             <normaloff>images/translate_google.ico</normaloff>images/translate_google.ico
+                         </iconset>
          </property>
         </item>
         <item>
@@ -169,21 +148,11 @@
           <string>百度</string>
          </property>
          <property name="icon">
-          <iconset>
-           <normaloff>images/translate_baidu.png</normaloff>images/translate_baidu.png
-          </iconset>
+             <iconset>
+                 <normaloff>images/translate_baidu.png</normaloff>images/translate_baidu.png
+             </iconset>
          </property>
         </item>
-       </widget>
-      </item>
-      <item row="0" column="3">
-       <widget class="QPushButton" name="pushButton_trans_doc">
-        <property name="enabled">
-         <bool>false</bool>
-        </property>
-        <property name="text">
-         <string>文档翻译</string>
-        </property>
        </widget>
       </item>
      </layout>

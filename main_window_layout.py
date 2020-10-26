@@ -56,9 +56,11 @@ class Ui_MainWindow(object):
         self.comboBox_src_lang.addItem(icon2, "")
         self.main_gridLayout.addWidget(self.comboBox_src_lang, 0, 0, 1, 2)
         self.plainTextEdit_src = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.plainTextEdit_src.setPlainText("")
         self.plainTextEdit_src.setObjectName("plainTextEdit_src")
         self.main_gridLayout.addWidget(self.plainTextEdit_src, 1, 0, 1, 4)
         self.plainTextEdit_dest = QtWidgets.QPlainTextEdit(self.centralwidget)
+        self.plainTextEdit_dest.setPlainText("")
         self.plainTextEdit_dest.setObjectName("plainTextEdit_dest")
         self.main_gridLayout.addWidget(self.plainTextEdit_dest, 3, 0, 1, 4)
         self.comboBox_trans_api = QtWidgets.QComboBox(self.centralwidget)
@@ -69,11 +71,7 @@ class Ui_MainWindow(object):
         icon7 = QtGui.QIcon()
         icon7.addPixmap(QtGui.QPixmap("images/translate_baidu.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.comboBox_trans_api.addItem(icon7, "")
-        self.main_gridLayout.addWidget(self.comboBox_trans_api, 0, 2, 1, 1)
-        self.pushButton_trans_doc = QtWidgets.QPushButton(self.centralwidget)
-        self.pushButton_trans_doc.setEnabled(False)
-        self.pushButton_trans_doc.setObjectName("pushButton_trans_doc")
-        self.main_gridLayout.addWidget(self.pushButton_trans_doc, 0, 3, 1, 1)
+        self.main_gridLayout.addWidget(self.comboBox_trans_api, 0, 2, 1, 2)
         self.gridLayout_2.addLayout(self.main_gridLayout, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -91,28 +89,6 @@ class Ui_MainWindow(object):
         self.comboBox_src_lang.setItemText(0, _translate("MainWindow", "源语言：自动"))
         self.comboBox_src_lang.setItemText(1, _translate("MainWindow", "源语言：中文"))
         self.comboBox_src_lang.setItemText(2, _translate("MainWindow", "源语言：英文"))
-        self.plainTextEdit_src.setPlainText(_translate("MainWindow", "### 使用说明\n"
-                                                                     ">> 复制需要翻译的文档到此文本框中\n"
-                                                                     ">> 软件将自动“去换行”并执行翻译\n"
-                                                                     "\n"
-                                                                     "### 快捷键\n"
-                                                                     ">> 隐藏窗口: CTRL/COMMAND + M\n"
-                                                                     ">> 退出程序: CTRL/COMMAND + Q\n"
-                                                                     "\n"
-                                                                     "### 关于程序\n"
-                                                                     ">> 软件更新: http://dwz.date/cWx6\n"
-                                                                     ">> 问题反馈: http://dwz.date/cWxB"))
-        self.plainTextEdit_dest.setPlainText(_translate("MainWindow", "### Instructions \n"
-                                                                      ">> Copy text to be translated into this box \n"
-                                                                      "\n"
-                                                                      "### Shortcuts \n"
-                                                                      ">> Minimize window: CTRL / COMMAND + M \n"
-                                                                      ">> Exit : CTRL / COMMAND + Q \n"
-                                                                      "\n"
-                                                                      "### About\n"
-                                                                      ">> Update: http://dwz.date/cWx6 \n"
-                                                                      ">> Feedback: http://dwz.date/cWxB"))
         self.comboBox_trans_api.setPlaceholderText(_translate("MainWindow", "翻译接口"))
         self.comboBox_trans_api.setItemText(0, _translate("MainWindow", "谷歌"))
         self.comboBox_trans_api.setItemText(1, _translate("MainWindow", "百度"))
-        self.pushButton_trans_doc.setText(_translate("MainWindow", "文档翻译"))
