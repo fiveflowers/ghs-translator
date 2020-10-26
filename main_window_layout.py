@@ -71,7 +71,12 @@ class Ui_MainWindow(object):
         icon7 = QtGui.QIcon()
         icon7.addPixmap(QtGui.QPixmap("images/translate_baidu.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.comboBox_trans_api.addItem(icon7, "")
-        self.main_gridLayout.addWidget(self.comboBox_trans_api, 0, 2, 1, 2)
+        self.main_gridLayout.addWidget(self.comboBox_trans_api, 0, 2, 1, 1)
+        self.pushButton_format = QtWidgets.QPushButton(self.centralwidget)
+        self.pushButton_format.setCheckable(True)
+        self.pushButton_format.setChecked(True)
+        self.pushButton_format.setObjectName("pushButton_format")
+        self.main_gridLayout.addWidget(self.pushButton_format, 0, 3, 1, 1)
         self.gridLayout_2.addLayout(self.main_gridLayout, 0, 0, 1, 1)
         MainWindow.setCentralWidget(self.centralwidget)
 
@@ -92,3 +97,4 @@ class Ui_MainWindow(object):
         self.comboBox_trans_api.setPlaceholderText(_translate("MainWindow", "翻译接口"))
         self.comboBox_trans_api.setItemText(0, _translate("MainWindow", "谷歌"))
         self.comboBox_trans_api.setItemText(1, _translate("MainWindow", "百度"))
+        self.pushButton_format.setText(_translate("MainWindow", "自动格式化"))
